@@ -12,7 +12,12 @@ export function Product({ product }: ProductProps) {
       <img className="w-1/6" src={product.image} alt={product.title} />
       <span className="font-bold">{product.price}</span>
       <div>{product.title}</div>
-      {details && <div>{product.description}</div>}
+      {details && <div>
+        <p>{product.description}</p>
+        <p>Rate:<div style={{fontWeight:'bold'}} >{product.rating?.rate}</div></p>
+      
+      
+      </div>}
       <button
       className={btnClass.join(' ')}
       onClick={() => setDetails(prev=>!prev)}>{!details ? 'show more': 'hide'}</button>
